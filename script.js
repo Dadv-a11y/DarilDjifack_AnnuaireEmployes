@@ -5,6 +5,7 @@ let emailError = document.getElementById('emailError');
 let posteError = document.getElementById('posteError');
 let submitButton = document.getElementById('submitButton');
 let tableBody = document.getElementById('tableBody');
+let emptyPlaceholder = document.getElementById('emptyPlaceholder');
 
 
 addEventListener('submit', function(event) {
@@ -40,6 +41,7 @@ addEventListener('submit', function(event) {
     }
 
     if (isValid) {
+         emptyPlaceholder.style.display = 'none';
          let employe = { 
             id: (employes.length > 0 ? Math.max(...employes.map(e => e.id)) : 0) + 1,
             nom : form.nom.value.trim(),
@@ -81,6 +83,11 @@ function addEmployeeToTable( nom , prenom , email , poste , id){
 
 document.addEventListener("DOMContentLoaded",()=>{
     let employes = JSON.parse(localStorage.getItem("list")) || [] ;
+    if (employes.length === 0) {
+        emptyPlaceholder.style.display = 'block';
+    } else {
+        emptyPlaceholder.style.display = 'none';
+    }
     employes.forEach((employe) =>{
         addEmployeeToTable(employe.nom, employe.prenom , employe.email , employe.poste , employe.id)
     })

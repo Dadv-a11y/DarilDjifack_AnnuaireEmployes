@@ -2,8 +2,8 @@
 
 ## Auteur
 
-- **Nom:** DJIFACK
-- **Prénom:** ASSONGTIA DARIL VIANY
+- **Nom:** DJIFACK ASSONGTIA
+- **Prénom:**  DARIL VIANY
 
 ## Technologies utilisées
 

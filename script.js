@@ -76,6 +76,9 @@ function addEmployeeToTable( nom , prenom , email , poste , id){
         tableBody.removeChild(row);
         employes = employes.filter(emp => emp.id !==  id);
         localStorage.setItem("list", JSON.stringify(employes));
+        if (employes.length === 0) {
+            emptyPlaceholder.style.display = 'block';
+        }
     });
     
     tableBody.appendChild(row);
@@ -83,9 +86,7 @@ function addEmployeeToTable( nom , prenom , email , poste , id){
 
 document.addEventListener("DOMContentLoaded",()=>{
     let employes = JSON.parse(localStorage.getItem("list")) || [] ;
-    if (employes.length === 0) {
-        emptyPlaceholder.style.display = 'block';
-    } else {
+    if (employes.length !== 0) {
         emptyPlaceholder.style.display = 'none';
     }
     employes.forEach((employe) =>{

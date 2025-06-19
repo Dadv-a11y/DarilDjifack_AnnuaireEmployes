@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Annuaire simplifié des employés</title>
+</head>
+<body>
+    <aside>
+        <form >
+        <div class="input-container">
+           <label for="nom">Nom:</label>
+           <input type="text" id="nom" name="nom"  > 
+           <span class="error" id="nomError"></span>
+        </div>
+        <div class="input-container">
+           <label for="Prenom">Prenom:</label>
+           <input type="text" id="Prenom" name="prenom" > 
+           <span class="error" id="prenomError"></span>
+        </div>
+        <div class="input-container">
+           <label for="Email">Email:</label>
+           <input type="email" id="Email" name="email" > 
+            <span class="error" id="emailError"></span>
+        </div>
+        <div class="input-container">
+           <label for="Poste">Poste/Fonction:</label>
+           <input type="text" id="Poste" name="poste" > 
+           <span class="error" id="posteError"></span>
+        </div> 
+        <button type="submit" id="submitBtn">Ajouter</button>
+        </form>
+    </aside>    <main>
+        <table id="employeTable">
+            <thead>
+                <tr>
+                    <th>Initiales</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Email</th>
+                    <th>Poste</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <!-- Les employés seront listés ici -->
+            </tbody>
+        </table>
+    </main>
+</body>
+<script src="script.js"></script>
+</html>

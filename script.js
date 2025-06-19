@@ -6,7 +6,18 @@ let posteError = document.getElementById('posteError');
 let submitButton = document.getElementById('submitButton');
 let tableBody = document.getElementById('tableBody');
 let emptyPlaceholder = document.getElementById('emptyPlaceholder');
+let searchInput = document.getElementById('searchInput');
 
+
+searchInput.addEventListener('input', function() {
+    let searchTerm = searchInput.value.toLowerCase();   
+    let rows = tableBody.querySelectorAll('tr');
+    rows.forEach(row => {
+        let cells = row.querySelectorAll('td');
+        let match = Array.from(cells).some(cell => cell.textContent.toLowerCase().includes(searchTerm));
+        row.style.display = match ? '' : 'none';
+    });
+});
 
 addEventListener('submit', function(event) {
     event.preventDefault();

@@ -31,6 +31,12 @@ form {
     left: 0;
 }
 
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
 .input-container {
     display: flex;
     flex-direction: column;
@@ -41,18 +47,27 @@ form {
     font-weight: bold;
 }
 
-.input-container input[type="text"],
-.input-container input[type="email"] {
+ input[type="text"],
+ input[type="email"] {
     padding: 0.5rem;
     border: 1px solid var(--text-color);
     border-radius: 4px;
     width: 100%;
 }
 
-.input-container input[type="text"]:focus,
-.input-container input[type="email"]:focus {
+ input[type="text"]:focus,
+ input[type="email"]:focus {
     border-color: var(--primary-color);
     outline: none;
+}
+
+.search-container {
+    margin-bottom: 1rem;
+}
+
+.search-container input[type="text"] {
+    width: calc(100% - 40px);
+    margin-right: 10px;
 }
 
 button {
